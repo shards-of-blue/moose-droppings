@@ -1,4 +1,4 @@
-name: "Droppings"
+name: "droppings"
 description: "Generates output based on input key"
 inputs:
   env:
