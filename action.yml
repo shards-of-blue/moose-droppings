@@ -1,0 +1,12 @@
+name: "Droppings"
+description: "Generates output based on input key"
+inputs:
+  env:
+    description: "env key"
+    required: true
+outputs:
+  status: # id of output
+    description: "Status code word"
+runs:
+  using: /bin/bash
+  main: droppings.sh
