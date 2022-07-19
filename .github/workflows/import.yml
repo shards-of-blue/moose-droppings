@@ -1,0 +1,40 @@
+name: import deployment configuration files
+
+on:
+  workflow_call:
+    inputs:
+      targetdir:
+        required: true
+        type: string
+    #outputs:
+    #  result:
+    #    value: ${{ jobs.lookup.outputs.result }}
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    #outputs:
+    #  result:
+    #    ${{ steps.fetch.outputs.value }}
+
+    steps:
+      - name: 'Context Dump'
+        run: |
+          echo "github event_name: " ; echo '${{ github.event_name }}'
+          echo "github context: " ; echo '${{ toJSON(github) }}'
+          echo "inputs context: " ; echo '${{ toJSON(inputs) }}'
+          echo "env context: " ; echo '${{ toJSON(env) }}'
+          echo "github environment in runner:"; /bin/env
+          echo '-----'
+
+      - uses: actions/checkout@v2
+        with:
+          #repository: ${{ github.action_repository }}
+          repository: shards-of-blue/moose-droppings
+
+      - name: 'Fetch'
+        id: 'fetch'
+        run:
+          echo "CMD: cp -p *.yaml ${{ inputs.targetdir }}"
+          /bin/bash -c "cp -p *.yaml ${{ inputs.targetdir }}"
+#
