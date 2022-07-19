@@ -34,7 +34,7 @@ jobs:
 
       - name: 'Fetch'
         id: 'fetch'
-        run:
+        run: |
           echo "CMD: cp -p *.yaml ${{ inputs.targetdir }}"
           /bin/bash -c "cp -p *.yaml ${{ inputs.targetdir }}"
 #
