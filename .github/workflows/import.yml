@@ -35,6 +35,6 @@ jobs:
       - name: 'Fetch'
         id: 'fetch'
         run: |
-          echo "CMD: cp -p *.yaml ${{ github.event.inputs.targetdir }}"
-          /bin/bash -c "cp -p *.yaml ${{ github.event.inputs.targetdir }}"
+          echo "CMD: cp -p *.yaml ${{ inputs.targetdir }}"
+          /bin/bash -c "cp -p *.yaml ${{ inputs.targetdir }}"
 #
