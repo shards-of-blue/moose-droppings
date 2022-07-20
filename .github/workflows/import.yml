@@ -35,7 +35,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           #repository: ${{ github.action_repository }}
-          repository: shards-of-blue/moose-droppings@${{inputs.libref}}
+          #repository: shards-of-blue/moose-droppings@${{inputs.libref}}
+          repository: shards-of-blue/moose-droppings@master
           path: moose
 
       - uses: actions/upload-artifact@v3
