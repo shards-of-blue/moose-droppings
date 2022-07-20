@@ -36,7 +36,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: moose-drops
-          path: moose
+          path: |
+            moose/conf
+            moose/tf
 
       - name: 'Fetch'
         id: 'fetch'
