@@ -31,16 +31,16 @@ jobs:
         with:
           #repository: ${{ github.action_repository }}
           repository: shards-of-blue/moose-droppings
-          #path: moose
+          path: moose
 
       - uses: actions/upload-artifact@v3
         with:
           name: moose-drops
-          path: moosed
+          path: moose
 
       - name: 'Fetch'
         id: 'fetch'
         run: |
           echo "CMD: cp -p *.yaml ${{ inputs.targetdir }}"
-        #  /bin/bash -c "cp -p *.yaml ${{ inputs.targetdir }}"
+        #  /bin/bash -c "cp -p moose/*.yaml ${{ inputs.targetdir }}"
 #
