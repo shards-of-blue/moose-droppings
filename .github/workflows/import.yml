@@ -37,8 +37,8 @@ jobs:
         with:
           name: moose-drops
           path: |
-            moose/conf
-            moose/tf
+            moose/conf/*.yaml
+            moose/tf/
 
       - name: 'Fetch'
         id: 'fetch'
